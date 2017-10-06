@@ -12,7 +12,7 @@ public class VirtualPetApp {
 
 		do {
 			pet.tick(0);
-			System.out.println("This is how " + petName + " is feeling\nHunger: " + pet.getHunger() + "\nBoredom: "
+			System.out.println("This is how " + petName + " is feeling:\nHunger: " + pet.getHunger() + "\nBoredom: "
 					+ pet.getBoredom() + "\nNeed To Potty: " + pet.getNeedToPotty() + "\nSleepiness: " + pet.getTiredness());
 			System.out.println("\nWhat would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Nap\n5: Leave\n");
 			actionOpt = input.next();

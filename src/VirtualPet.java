@@ -8,10 +8,10 @@ public class VirtualPet {
 	private int boredom;
 	private int needToPotty;
 	private int tiredness;
-	
+
 	// Constructor
 	public VirtualPet(String requiredAction, int hunger, int boredom, int needToPotty, int tiredness) {
-		
+
 		this.requiredAction = requiredAction;
 		this.hunger = hunger;
 		this.boredom = boredom;
@@ -32,22 +32,18 @@ public class VirtualPet {
 	public int getNeedToPotty() {
 		return needToPotty;
 	}
+
 	public int getTiredness() {
 		return tiredness;
 	}
 
-	// Setter (offers change)
-
-	// Method of behavior
-
-	// tick
 	public void tick(int updatePetStatus) {
 		// update everything
 		hunger += 1;
 		boredom += 1;
 		needToPotty += 1;
 		tiredness += 1;
-		}
+	}
 
 	public boolean allowAction(String enteredAction) {
 		return requiredAction.equals(enteredAction);
@@ -71,7 +67,7 @@ public class VirtualPet {
 		hunger += pooping;
 		boredom -= pooping;
 	}
-	
+
 	void sleeping(int sleeping) {
 		needToPotty += sleeping;
 		hunger += sleeping;

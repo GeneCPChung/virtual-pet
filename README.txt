@@ -4,9 +4,9 @@ created readme
 TODO
 - add welcome screen //done
 - give your pet a name//done
-- list/update status of pet
+- list/update status of pet//done
 	
-- hunger, boredom, needToPotty, ||sleepiness, lonely 
+- hunger//done, boredom//done, needToPotty//done, ||sleepiness//done, lonely 
 - feedme, playwithme, pottytime, ||naptime, petme
 
 do calculations in method
