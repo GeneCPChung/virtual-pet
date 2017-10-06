@@ -5,7 +5,7 @@ public class VirtualPetApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String petName = null;
-		VirtualPet pet = new VirtualPet(petName, 49, 49, 49);
+		VirtualPet pet = new VirtualPet(petName, 49, 49, 49, 49);
 		System.out.println("Welcome! Please give your pet a name: ");
 		String actionOpt = input.nextLine();
 		petName = actionOpt;
@@ -13,8 +13,8 @@ public class VirtualPetApp {
 		do {
 			pet.tick(0);
 			System.out.println("This is how " + petName + " is feeling\nHunger: " + pet.getHunger() + "\nBoredom: "
-					+ pet.getBoredom() + "\nNeed To Potty: " + pet.getNeedToPotty());
-			System.out.println("\nWhat would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Leave\n");
+					+ pet.getBoredom() + "\nNeed To Potty: " + pet.getNeedToPotty() + "\nSleepiness: " + pet.getTiredness());
+			System.out.println("\nWhat would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Nap\n5: Leave\n");
 			actionOpt = input.next();
 			if (actionOpt.contentEquals("1")) {
 				System.out.println("Please enter an amount to feed\n(1-5 Where 1 is the least)");
@@ -40,11 +40,16 @@ public class VirtualPetApp {
 				System.out.println(petName + "'s feeling much better. Her Potty is now " + pet.getNeedToPotty() + " and their Hunger is now " + pet.getHunger() + "\n");
 
 			}
+			int sleep = 30;
 			if (actionOpt.contentEquals("4")) {
+				pet.sleeping(sleep);
+			}
+			
+			if (actionOpt.contentEquals("5")) {
 				System.out.println("Thanks for visiting!");
 				System.exit(0);
 			}
 
-		} while (!actionOpt.contentEquals("4"));
+		} while (!actionOpt.contentEquals("5"));
 	}
 }

@@ -7,14 +7,16 @@ public class VirtualPet {
 	private int hunger;
 	private int boredom;
 	private int needToPotty;
+	private int tiredness;
 	
 	// Constructor
-	public VirtualPet(String requiredAction, int hunger, int boredom, int needToPotty) {
+	public VirtualPet(String requiredAction, int hunger, int boredom, int needToPotty, int tiredness) {
 		
 		this.requiredAction = requiredAction;
 		this.hunger = hunger;
 		this.boredom = boredom;
 		this.needToPotty = needToPotty;
+		this.tiredness = tiredness;
 	}
 
 	// Accessor (getter) method
@@ -30,6 +32,9 @@ public class VirtualPet {
 	public int getNeedToPotty() {
 		return needToPotty;
 	}
+	public int getTiredness() {
+		return tiredness;
+	}
 
 	// Setter (offers change)
 
@@ -40,9 +45,9 @@ public class VirtualPet {
 		// update everything
 		hunger += 1;
 		boredom += 1;
-		needToPotty += 1;	
-
-	}
+		needToPotty += 1;
+		tiredness += 1;
+		}
 
 	public boolean allowAction(String enteredAction) {
 		return requiredAction.equals(enteredAction);
@@ -52,17 +57,26 @@ public class VirtualPet {
 		hunger -= eating;
 		needToPotty += eating;
 		boredom += eating;
+		tiredness += eating;
 	}
 
 	void playing(int playing) {
 		boredom -= playing;
 		hunger += playing;
+		tiredness += playing;
 	}
 
 	void pooping(int pooping) {
 		needToPotty -= pooping;
 		hunger += pooping;
 		boredom -= pooping;
+	}
+	
+	void sleeping(int sleeping) {
+		needToPotty += sleeping;
+		hunger += sleeping;
+		boredom -= sleeping;
+		tiredness -= sleeping;
 	}
 
 }
