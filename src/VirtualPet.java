@@ -6,14 +6,16 @@ public class VirtualPet {
 	private String petStatus;
 	private int hunger;
 	private int eating;
+	private int playing;
 	private int boredom;
 	private int needToPotty;
 	
 	
 	// Constructor
-	public VirtualPet(String requiredAction, int hunger) {
+	public VirtualPet(String requiredAction, int hunger, int boredom) {
 		this.requiredAction = requiredAction;
 		this.hunger = hunger;
+		this.boredom = boredom;
 	}
 
 	// Accessor (getter) method
@@ -21,9 +23,11 @@ public class VirtualPet {
 	public int getHunger() {
 		return hunger;
 	}
+	public int getBoredom() {
+		return boredom;
+	}
 
 	// Setter (offers change)
-
 		
 
 	// Method of behavior
@@ -39,6 +43,9 @@ public class VirtualPet {
 	
 	void feeding(int eating) {
 		hunger -= eating;
+	}
+	void playing(int playing) {
+		boredom -= playing;
 	}
 
 

@@ -5,15 +5,15 @@ public class VirtualPetApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String petName = null;
-		VirtualPet pet = new VirtualPet(petName, 10);
+		VirtualPet pet = new VirtualPet(petName, 10, 10);
 		System.out.println("Welcome! Please give your pet a name: ");
 		String actionOpt = input.nextLine();
 		petName = actionOpt;
-		System.out.println("Welcome! This is how " + petName + " is feeling\n");
+		
 
 		do {
-			System.out.println("This is how " + petName + " is feeling\n");
-			System.out.println("What would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Leave\n");
+			System.out.println("This is how " + petName + " is feeling\nHunger: " + pet.getHunger() +"\nBoredom: " + pet.getBoredom());
+			System.out.println("\nWhat would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Leave\n");
 			actionOpt = input.next();
 			if (actionOpt.contentEquals("1")) {
 				System.out.println("Please enter an amount to feed\n(1-5 Where 1 is the least)");
@@ -27,6 +27,12 @@ public class VirtualPetApp {
 					pet.feeding(feedingPet);
 					System.out.println(petName + "'s hunger is now: " + pet.getHunger());
 				}
+			}
+			int play = 5;
+			if (actionOpt.contentEquals("2")) {
+				pet.playing(play);
+				System.out.println(petName + "'s new boredom is now " + pet.getBoredom() + "\n");
+				
 			}
 			
 
