@@ -6,15 +6,15 @@ public class VirtualPetApp {
 		Scanner input = new Scanner(System.in);
 		String petName = null;
 		String petType = null;
+		String petInfo = null;
 		VirtualPet pet = new VirtualPet(petName, 49, 49, 49, 49);
 		PetArt myPet = new PetArt(petType);
 		System.out.println("Welcome! Please give your pet a name: ");
 		String actionOpt = input.nextLine();
 		petName = actionOpt;
-		System.out.println("What kind of pet is " + petName + "?");
-		String petInfo = input.nextLine();
+		System.out.println("What kind of pet is " + petName + "?\nDog\nCat\nRobot");
+		petInfo = input.nextLine();
 		petType = petInfo;
-
 		do {
 			pet.tick(0);
 			if (petType.equals("dog")) {
@@ -57,7 +57,6 @@ public class VirtualPetApp {
 				pet.pooping(poop);
 				System.out.println(petName + "'s feeling much better. Her Potty is now " + pet.getNeedToPotty()
 						+ " and their Hunger is now " + pet.getHunger() + "\n");
-
 			}
 			int sleep = 25;
 			if (actionOpt.contentEquals("4")) {
