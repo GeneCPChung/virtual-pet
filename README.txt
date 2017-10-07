@@ -2,15 +2,23 @@
 created readme
 
 TODO
-- add welcome screen //done
-- give your pet a name//done
-- list/update status of pet//done
-	
-- hunger//done, boredom//done, needToPotty//done, ||sleepiness, lonely 
-- feedme, playwithme, pottytime, ||naptime, petme
+- Create tick method
+- Add welcome screen //done
+- Give your pet a name//done
+- List/update status of pet//done
 
-do calculations in method//done
+
+Instance variables
+- hunger//done, boredom//done, needToPotty//done, ||sleepiness//done, lonely 
+- feedme//done, playwithme//done, pottytime//done, ||naptime//done, petme
+
+Do calculations in method//done
 - x - y, y*x, etc
 
 
 TODO Stretch
+
+10/7/2017
+//done - Add picture of pet (created separate class to call the individual pictures)
+	- create random number generator to change a random stat by x amount every iteration
+	- remove  numbers and replace with a "Status" message
