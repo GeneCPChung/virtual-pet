@@ -3,7 +3,6 @@ public class VirtualPet {
 
 	// Instance Data
 	private String requiredAction;
-	private String petStatus;
 	private int hunger;
 	private int boredom;
 	private int needToPotty;
@@ -52,27 +51,23 @@ public class VirtualPet {
 	void feeding(int eating) {
 		hunger -= eating;
 		needToPotty += eating;
-		boredom += eating;
-		tiredness += eating;
+
 	}
 
 	void playing(int playing) {
 		boredom -= playing;
-		hunger += playing;
 		tiredness += playing;
+
 	}
 
 	void pooping(int pooping) {
 		needToPotty -= pooping;
-		hunger += pooping;
-		boredom -= pooping;
+		boredom += pooping;
 	}
 
 	void sleeping(int sleeping) {
-		needToPotty += sleeping;
-		hunger += sleeping;
-		boredom -= sleeping;
 		tiredness -= sleeping;
+		needToPotty += sleeping;
 	}
 
 }
