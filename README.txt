@@ -1,8 +1,9 @@
 10-6
-created readme
+- Created README file.
 
-TODO
-- Create tick method
+TODO List
+- Create tick method using "-/+ =" to increment the stats by 1.
+  - UPDATE: I'm thinking about changing this to something else, but have not figured out what. 
 - Add welcome screen //done
 - Give your pet a name//done
 - List/update status of pet//done

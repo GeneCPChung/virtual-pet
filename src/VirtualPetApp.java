@@ -15,6 +15,7 @@ public class VirtualPetApp {
 		System.out.println("What kind of pet is " + petName + "?\nDog\nCat\nRobot");
 		petInfo = input.nextLine();
 		petType = petInfo;
+		//Game Loop
 		do {
 			pet.tick(0);
 			if (petType.equals("dog")) {
@@ -26,28 +27,20 @@ public class VirtualPetApp {
 			if (petType.endsWith("robot")) {
 				System.out.println(myPet.getRobotHappy());
 			}
-
 			System.out.println("This is how " + petName + " is feeling:\nHunger: " + pet.getHunger() + "\nBoredom: "
 					+ pet.getBoredom() + "\nNeed To Potty: " + pet.getNeedToPotty() + "\nSleepiness: "
 					+ pet.getTiredness());
 			System.out.println("\nWhat would you like to do?\n1: Feed\n2: Play\n3: Potty\n4: Nap\n5: Leave\n");
 			actionOpt = input.next();
 			if (actionOpt.contentEquals("1")) {
-				System.out.println("Please enter an amount to feed\n(1-5 Where 1 is the least)");
-				int feedingPet = input.nextInt();
-				while (feedingPet > pet.getHunger()) {
-					System.out.println("You will kill " + petName
-							+ " with that much food! Please enter something more reasonable:");
-					feedingPet = input.nextInt();
-				}
-				if (feedingPet > 0) {
-					pet.feeding(feedingPet);
-					System.out.println(petName + "'s hunger is now: " + pet.getHunger() + " and Need To Potty is "
-							+ pet.getNeedToPotty());
-				}
+				int feedingPet = 25;
+				pet.feeding(feedingPet);
+				System.out.println(petName + "'s hunger is now: " + pet.getHunger() + " and Need To Potty is "
+						+ pet.getNeedToPotty());
 			}
-			int play = 25;
+			
 			if (actionOpt.contentEquals("2")) {
+				int play = 25;
 				pet.playing(play);
 				System.out.println(petName + "'s new boredom is now " + pet.getBoredom() + " and their hunger is "
 						+ pet.getHunger() + "\n");

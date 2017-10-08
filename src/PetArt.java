@@ -12,7 +12,7 @@ public class PetArt {
 	}
 
 	public String getDogHappy() {
-		return "  /^ ^\\\n / 0 0 \\\n V\\ Y /V\n  / v \\\n";
+		return "  /^ ^\\\n / 0 0 \\\n V\\ Y /V\n  /'-'\\\n";
 	}
 
 	public String getDogBored() {
