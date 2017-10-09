@@ -16,15 +16,27 @@ public class PetArt {
 	}
 
 	public String getDogFace() {
-		return "\n  /^ ^\\\n / 0 0 \\\n V\\ Y /V\n  /'-'\\\n";
+		return "  /^ ^\\\n / 0 0 \\\n V\\ Y /V\n  /'-'\\\n";
+	}
+
+	public String getDeadDog() {
+		return "  /^ ^\\\n / X X \\\n V\\ Y /V\n  / U \\\n";
 	}
 
 	public String getCatFace() {
-		return "\n .       . \n \\`-\"'\"-'/ \n  } 6 6 { \n =.  Y  ,= \n   /^^^\\  \n";
+		return " .       . \n \\`-\"'\"-'/ \n  } 6 6 { \n =.  Y  ,= \n   /^^^\\  \n";
+	}
+
+	public String getDeadCat() {
+		return " .       . \n \\`-\"'\"-'/ \n  } X X { \n =.  Y  ,= \n   / U \\  \n";
 	}
 
 	public String getRobotFace() {
-		return "\n     _______\n   _/       \\_\n  / |       | \\\n /  |__   __|  \\\n|__/((o| |o))\\__| \n|\\     |_|     /| \n| \\           / | \n \\| / \\___/ \\ |/ \n  \\ |   _   | / \n   \\_________/ \n ";
+		return "     _______\n   _/       \\_\n  / |       | \\\n /  |__   __|  \\\n|__/((o| |o))\\__| \n|\\     |_|     /| \n| \\           / | \n \\| / \\___/ \\ |/ \n  \\ |   _   | / \n   \\_________/ \n ";
+	}
+
+	public String getDeadRobot() {
+		return "     _______\n   _/       \\_\n  / |       | \\\n /  |__   __|  \\\n|__/(X | |X))\\__| \n|\\     |_|     /| \n| \\    ____   / | \n \\|\\  /    \\ |/ \n  \\ |   _    |/ \n   \\_________/ \n ";
 	}
 
 }

@@ -3,12 +3,11 @@ import java.util.Random;
 public class VirtualPet {
 	Random rand = new Random();
 	int tickUpdt = rand.nextInt(5) + 1;
-	int rngNum5 = rand.nextInt(100) + 1;
 	int rngNum1 = rand.nextInt(5) + 1;
 	int rngNum2 = rand.nextInt(5) + 1;
 	int rngNum3 = rand.nextInt(5) + 1;
 	int rngNum4 = rand.nextInt(5) + 1;
-	
+	int rngNum5 = rand.nextInt(100) + 1;
 
 	// Instance Data
 	private String petName;
@@ -16,6 +15,7 @@ public class VirtualPet {
 	private int boredom;
 	private int needToPotty;
 	private int tiredness;
+	String PetType;
 
 	// Constructor
 	public VirtualPet(String petName, int hunger, int boredom, int needToPotty, int tiredness) {
@@ -26,6 +26,8 @@ public class VirtualPet {
 		this.needToPotty = needToPotty;
 		this.tiredness = tiredness;
 	}
+
+	PetArt petFace = new PetArt(PetType);
 
 	// Accessors
 	public int getHunger() {
@@ -44,36 +46,46 @@ public class VirtualPet {
 		return tiredness;
 	}
 
-	public int getTick(int tickStats) {
+	public int getTick() {
 
+		int tickStat = rngNum5;
 
-		if (rngNum5 < 25) {
+		if (tickStat < 25) {
 			hunger *= rngNum1;
 			boredom *= rngNum2;
 			needToPotty *= rngNum3;
 			tiredness *= rngNum4;
+			return tickStat;
 		}
-		if (rngNum5 >= 21 && rngNum5 <= 49) {
+		if (tickStat >= 21 && rngNum5 <= 49) {
 			hunger += rngNum1;
 			boredom -= rngNum2;
 			needToPotty += rngNum3;
 			tiredness -= rngNum4;
+			return tickStat;
 		}
-		if (rngNum5 >= 50 && rngNum5 <= 74) {
+		if (tickStat >= 50 && rngNum5 <= 74) {
 			hunger -= rngNum1;
 			boredom += rngNum2;
 			needToPotty -= rngNum3;
 			tiredness += rngNum4;
+			return tickStat;
 		}
-		if (rngNum5 >= 75 && rngNum5 <= 100) {
+		if (tickStat >= 75 && rngNum5 <= 100) {
 			hunger /= rngNum1;
 			boredom /= rngNum2;
 			needToPotty /= rngNum3;
 			tiredness /= rngNum4;
+			return tickStat;
+		} else {
+			return 0;
 		}
-		return tickStats;
-		
-		
+
+	}
+
+	public int getDead() {
+		System.exit(0);
+		return 0;
 	}
 
 	// Name method
@@ -84,14 +96,14 @@ public class VirtualPet {
 	// Actions
 	void feeding() {
 		int eating = rngNum5;
-		hunger -= eating;
+		hunger += eating;
 		needToPotty += eating;
 
 	}
 
 	void playing() {
 		int play = rngNum5;
-		boredom -= play;
+		boredom += play;
 		tiredness += play;
 
 	}
@@ -108,15 +120,25 @@ public class VirtualPet {
 		hunger += sleeping;
 	}
 
-	// Pet Logic
-	
-	  public void selfFeed(String[] args) { 
-		  if (this.hunger < 100) { 
-			  hunger /= rngNum5;
-	  System.out.println(petName + "ate too much, so they threw up on the couch!");
-	  }
-	  
-	  
-	  
-  }
+	// Pet Actions
+	public int getFood() {
+		return hunger += rngNum5;
+	}
+
+	public int getPuke() {
+		return hunger -= rngNum5;
+	}
+
+	public int getExcercise() {
+		return boredom += rngNum5;
+	}
+
+	public int getCrazy() {
+		return boredom -= rngNum5;
+	}
+
+	public int getPooper() {
+		return needToPotty -= rngNum5;
+	}
+
 }

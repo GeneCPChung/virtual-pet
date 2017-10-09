@@ -24,25 +24,68 @@ public class VirtualPetApp {
 
 		// Game Loop
 		do {
-			pet.getTick(pet.tickUpdt);
-					
-			if (pet.getHunger() > 100) {
-				System.out.println("dude shit on the couch");
-				pet.feeding();
+
+			// Tick
+
+			pet.getTick();
+
+			// Pet Actions
+			if (pet.getHunger() < 0) {
+				System.out.println("Dude got hungry and ate the couch!\n");
+				pet.getFood();
+			}
+			if (pet.getHunger() > 150) {
+				System.out.println("Dude ate too much and puked all over the house!");
+				pet.getPuke();
+			}
+			if (pet.getBoredom() < 0) {
+				System.out.println("Dude died of boredom!\n YOU KILLED YOUR PET!!!");
+				if (petType.equals("dog")) {
+					System.out.println(myPet.getDeadDog());
+				}
+				if (petType.equals("cat")) {
+					System.out.println(myPet.getDeadCat());
+				}
+				if (petType.equals("robot")) {
+					System.out.println(myPet.getDeadRobot());
+				}
+				System.exit(0);
+			}
+			if (pet.getBoredom() > 200) {
+				System.out.println("Dude got too excited and chewed up all of your pillows!");
+				pet.getCrazy();
+			}
+
+			if (pet.getNeedToPotty() > 150) {
+				System.out.println("Dude pooped all over the house!");
+				pet.getPooper();
+			}
+			if (pet.getTiredness() < 0) {
+				System.out.println("Dude went into a coma!\n YOU KILLED YOUR PET!!!");
+				if (petType.equals("dog")) {
+					System.out.println(myPet.getDeadDog());
+				}
+				if (petType.equals("cat")) {
+					System.out.println(myPet.getDeadCat());
+				}
+				if (petType.equals("robot")) {
+					System.out.println(myPet.getDeadRobot());
+				}
+				System.exit(0);
 			}
 
 			// Create a picture of your pet
 			if (petType.equals("dog")) {
-				System.out.println(myPet.getDogFace());
+				System.out.println("\n\n  " + petName + "\n" + myPet.getDogFace());
 			}
 			if (petType.equals("cat")) {
-				System.out.println(myPet.getCatFace());
+				System.out.println("\n\n  " + petName + "\n" + myPet.getCatFace());
 			}
 			if (petType.equals("robot")) {
-				System.out.println(myPet.getRobotFace());
+				System.out.println("\n\n  " + petName + "\n" + myPet.getRobotFace());
 			}
 
-			// Pet stats and option list
+			// Menu options
 			System.out.println("This is how " + petName + " is feeling:\nHunger: " + pet.getHunger() + "\nBoredom: "
 					+ pet.getBoredom() + "\nNeed To Potty: " + pet.getNeedToPotty() + "\nSleepiness: "
 					+ pet.getTiredness());
@@ -54,7 +97,7 @@ public class VirtualPetApp {
 			// Choice actions
 			if (actionOpt.equals("1")) {
 				pet.feeding();
-				System.out.println("You gave " + petName + " some food.");
+				System.out.println("You gave " + petName + " " + pet.rngNum5 + " food.");
 			}
 
 			if (actionOpt.equals("2")) {
